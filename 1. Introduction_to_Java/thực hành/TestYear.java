@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class kiemtranamnhuan {
+public class TestYear { // kiểm tra năm nhuận
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int year;

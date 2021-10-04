@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bthienthiloichao {
+public class DisplayHello {
     public static void main(String[] args) {
         String name ;
         System.out.println("Hãy nhập tên của bạn : " );

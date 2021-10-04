@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class tínhongaytrongthang {
+public class DayInMonth {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Hãy nhập tháng mà bạn muốn đếm ngày");

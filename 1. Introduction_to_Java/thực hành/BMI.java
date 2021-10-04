@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class tinhchisocannangcuacothe {
+public class BMI {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double weight, height, bmi;
