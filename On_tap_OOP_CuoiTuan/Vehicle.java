@@ -80,59 +80,61 @@ public class Vehicle {
         System.out.println(" 1. Tạo các đối tượng xe và nhập thông tin ");
         System.out.println(" 2. Xuất bảng kê khai tiền thuế của các xe. ");
         System.out.println(" 3. Thoát ");
+        int selection;
 
-        System.out.println("Selection ");
-        int selection = Integer.parseInt(input.nextLine());
+        do {
+            System.out.println("\t" + "--Enter Selection-- ");
+            selection = Integer.parseInt(input.nextLine());
 
-        switch (selection) {
-            case 1: {
+            switch (selection) {
+                case 1: {
 
-                System.out.println("Nhập tên xe ");
-                String inputName = input.nextLine();
+                    System.out.println("Nhập tên xe ");
+                    String inputName = input.nextLine();
 
-                System.out.println("Nhập hãng xe");
-                String inputComapny = input.nextLine();
+                    System.out.println("Nhập hãng xe");
+                    String inputComapny = input.nextLine();
 
-                System.out.println("Nhập năm sản xuất");
-                int inputYear = input.nextInt();
+                    System.out.println("Nhập năm sản xuất");
+                    int inputYear = input.nextInt();
 
-                System.out.println("Dung tích");
-                int inputCapacity = input.nextInt();
+                    System.out.println("Dung tích");
+                    int inputCapacity = input.nextInt();
 
-                System.out.println("Giá trị của xe");
-                float inputValue = input.nextFloat();
+                    System.out.println("Giá trị của xe");
+                    float inputValue = input.nextFloat();
 
-                Vehicle vehicle = new Vehicle(inputName, inputComapny, inputYear, inputCapacity, inputValue);
-                System.out.println(vehicle);
-                break;
-            }
-            case 2: {
-                System.out.println("Nhập dung tích của xe để tính thuế ");
-                int inputCapacity = Integer.parseInt(input.nextLine());
-
-                System.out.println("Nhập giá trị của xe ");
-                float inputValue = input.nextFloat();
-
-                double carTax;
-                if (inputCapacity < 100 && inputCapacity > 0) {
-                    carTax = 0.1 * inputValue;
-                    System.out.println("Thuế cần phải đóng : " + carTax);
-
-                } else if (inputCapacity < 200) {
-                    carTax = 0.3 * inputValue;
-                    System.out.println("Thuế cần phải đóng : " + carTax);
-
-                } else {
-                    carTax = 0.5 * inputValue;
-                    System.out.println("Thuế cần phải đóng : " + carTax);
+                    Vehicle vehicle = new Vehicle(inputName, inputComapny, inputYear, inputCapacity, inputValue);
+                    System.out.println(vehicle);
+                    break;
                 }
-                break;
-            }
-            case 3: {
-                System.out.println("Bạn đã thoát khỏi chương trình");
-                break;
-            }
-        }
+                case 2: {
+                    System.out.println("Nhập dung tích của xe để tính thuế ");
+                    int inputCapacity = Integer.parseInt(input.nextLine());
 
+                    System.out.println("Nhập giá trị của xe ");
+                    float inputValue = input.nextFloat();
+
+                    double carTax;
+                    if (inputCapacity < 100 && inputCapacity > 0) {
+                        carTax = 0.1 * inputValue;
+                        System.out.println("Thuế cần phải đóng : " + carTax);
+
+                    } else if (inputCapacity < 200) {
+                        carTax = 0.3 * inputValue;
+                        System.out.println("Thuế cần phải đóng : " + carTax);
+
+                    } else {
+                        carTax = 0.5 * inputValue;
+                        System.out.println("Thuế cần phải đóng : " + carTax);
+                    }
+                    break;
+                }
+                case 3: {
+                    System.out.println("Bạn đã thoát khỏi chương trình");
+                    break;
+                }
+            }
+        } while (selection <= 0 || selection > 3);
     }
 }

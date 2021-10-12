@@ -1,11 +1,11 @@
-package Bai_6_Inheritance.ThucHanh;
+package Bai_7_Abstract_Class_Interface.baiTap.resizeable;
 
 public class Shape {
+
     private String color = "green";
     private boolean filled = true;
 
-    Shape() {
-
+    public Shape() {
     }
 
     public Shape(String color, boolean filled) {
@@ -30,13 +30,10 @@ public class Shape {
     }
 
     @Override
-    public String toString() {//display
-        return " A Shape with color of "
+    public String toString() {
+        return "A Shape with color of "
                 + getColor()
                 + " and "
-                + (isFilled() ? " filles " : " not filled ");
+                + (isFilled() ? "filled" : "not filled");
     }
 }
-
-
-

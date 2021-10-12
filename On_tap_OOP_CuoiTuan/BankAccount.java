@@ -23,6 +23,7 @@ public class BankAccount {
         this.nameAccount = nameAccount;
         this.numberMoney = numberMoney;
     }
+
     public BankAccount(String nameAccount, double numberMoney, double delet) {
         this.nameAccount = nameAccount;
         this.numberMoney = numberMoney;
@@ -32,10 +33,12 @@ public class BankAccount {
     public BankAccount(double numberMoney) {
         this.numberMoney = numberMoney;
     }
+
     public BankAccount(double numberMoney, double add) {
         this.numberMoney = numberMoney;
         this.add = add;
     }
+
     public long getNumberAccount() {
         return numberAccount;
     }
@@ -99,7 +102,6 @@ public class BankAccount {
     }
 
 
-
     @Override
     public String toString() {
         return "BankAccount[" +
@@ -124,65 +126,67 @@ public class BankAccount {
 
         Scanner input = new Scanner(System.in);
 
-        int option = Integer.parseInt(input.nextLine());
-        switch (option) {
-            case 1: {
-                double add;
-                do {
-                    System.out.println("Nhập số tiền muốn thêm ");
-                    add = Double.parseDouble(input.nextLine());
-                    if (add > 0) {
-                        BankAccount addMoney = new BankAccount(50, add);
-                        System.out.println(addMoney.addMoney());
-                    }
+        int option;
+        do {
+            System.out.println("\t"+"--Enter opsitom--");
+            option = Integer.parseInt(input.nextLine());
+            switch (option) {
+                case 1: {
+                    double add;
+                    do {
+                        System.out.println("Nhập số tiền muốn thêm ");
+                        add = Double.parseDouble(input.nextLine());
+                        if (add > 0) {
+                            BankAccount addMoney = new BankAccount(50, add);
+                            System.out.println(addMoney.addMoney());
+                        }
 
-                } while (add < 0);
-                break;
+                    } while (add < 0);
+                    break;
+                }
+                case 2: {
+                    double delet;
+                    do {
+                        System.out.println("Nhập số tiền muốn rút ");
+                        delet = Double.parseDouble(input.nextLine());
+                        if (delet <= (bankAccount.numberMoney - 5) && delet > 0) {
+                            BankAccount deletMoney = new BankAccount("Nguyễn Anh Tâm", 50, delet);
+                            System.out.println(deletMoney.deletMoney());
+                        }
+
+                    } while (delet > (bankAccount.numberMoney - 5) || delet < 5);
+                    break;
+                }
+                case 3: {
+                    BankAccount expire = new BankAccount(50);
+                    System.out.println(expire.expire());
+                    break;
+                }
+                case 4: {
+
+                    double delet;
+                    do {
+                        System.out.println("nhập số tiền muốn chuyển ");
+                        delet = Double.parseDouble(input.nextLine());
+                        if (delet <= (bankAccount.numberMoney - 5) && delet > 0) {
+                            BankAccount deletMoney = new BankAccount("Nguyễn Anh Tâm", 50, delet);
+                            System.out.println("số tền trước khi chuyển khoản cho tài khoản A : ");
+                            System.out.println(deletMoney.numberMoney);
+                            System.out.println("số tền sau khi chuyển khoản cho tài khoản A + Phí chuyển khoản  còn : ");
+                            System.out.println(deletMoney.deletMoney());
+                        }
+
+                    } while (delet > (bankAccount.numberMoney - 5) || delet < 5);
+
+                    BankAccount receiveTransfer = new BankAccount("Nguyễn Anh A", 100, delet);
+                    System.out.println("Số tiền của tài khoản A trước khi chuyển ");
+                    System.out.println(receiveTransfer.numberMoney);
+                    System.out.println("Số tiền của tài khoản A sau khi nhận  ");
+                    System.out.println(receiveTransfer.numberMoney + delet);
+
+                }
             }
-            case 2: {
-                double delet;
-                do {
-                    System.out.println("Nhập số tiền muốn rút ");
-                    delet = Double.parseDouble(input.nextLine());
-                    if (delet <= (bankAccount.numberMoney - 5) && delet > 0) {
-                        BankAccount deletMoney = new BankAccount("Nguyễn Anh Tâm", 50, delet);
-                        System.out.println(deletMoney.deletMoney());
-                    }
 
-                } while (delet > (bankAccount.numberMoney - 5) || delet < 5);
-                break;
-            }
-            case 3: {
-                BankAccount expire = new BankAccount(50);
-                System.out.println(expire.expire());
-                break;
-            }
-            case 4: {
-
-                double delet;
-                do {
-                    System.out.println("nhập số tiền muốn chuyển ");
-                    delet = Double.parseDouble(input.nextLine());
-                    if (delet <= (bankAccount.numberMoney - 5) && delet > 0) {
-                        BankAccount deletMoney = new BankAccount("Nguyễn Anh Tâm", 50, delet);
-                        System.out.println("số tền trước khi chuyển khoản cho tài khoản A : ");
-                        System.out.println(deletMoney.numberMoney);
-                        System.out.println("số tền sau khi chuyển khoản cho tài khoản A + Phí chuyển khoản  còn : ");
-                        System.out.println(deletMoney.deletMoney());
-                    }
-
-                } while (delet > (bankAccount.numberMoney - 5) || delet < 5);
-
-              BankAccount receiveTransfer = new BankAccount("Nguyễn Anh A",100,delet);
-                System.out.println("Số tiền của tài khoản A trước khi chuyển ");
-                System.out.println(receiveTransfer.numberMoney);
-                System.out.println("Số tiền của tài khoản A sau khi nhận  ");
-                System.out.println(receiveTransfer.numberMoney+delet);
-
-            }
-        }
-
+        } while (option <= 0 || option > 4);
     }
-
-
 }
