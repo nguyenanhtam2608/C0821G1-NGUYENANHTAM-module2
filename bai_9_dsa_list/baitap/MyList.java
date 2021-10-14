@@ -46,7 +46,7 @@ public class MyList<E> {
         return true;
     }
 
-    public boolean add(E elements, int index) {
+    public boolean add(MyListTest.StuDent elements, int index) {
         if (index > element.length) {
             System.out.println("index" + index);
         } else if (element.length == size) {
@@ -73,6 +73,49 @@ public class MyList<E> {
             System.out.println("minCapacity " + minCapacity);
         }
     }
+    //phương thức lấy element tại 1 index bất kì
+
+    public E get(int index) {
+        return (E) element[index];
+    }
+
+    //phuowmg thức lấy índex 1 phần tử trong mảng
+    public int indeOf(E elements) {
+        int index = -1;
+        for (int i = 0; i < size; i++) {
+            if (this.element[i].equals(elements)) {
+                return i;
+            }
+        }
+        return index;
+    }
+
+    // phương thức kiểm tra 1 phần tử có trong mảng hay không?
+    public boolean contains(E elements) {
+        return this.indeOf(elements) >= 0;
+    }
 
 
+    // phương thức tạo ra 1 bản sao của mảng
+    public MyList<E> clone() {
+        MyList<E> v = new MyList<>();
+        v.element = Arrays.copyOf(this.element, this.size);
+        v.size = this.size;
+        return v;
+    }
+
+    //
+    public E remove(int index) {
+        if (index < 0 || index > element.length) {
+            throw new IllegalArgumentException("ERROR index" + index);
+        }
+        E elements = (E) element[index];
+        for (int i = index; i < size - 1; i++) {
+            element[i] = element[i + 1];
+        }
+        element[size - 1] = null;
+        size--;
+        return elements;
+
+    }
 }

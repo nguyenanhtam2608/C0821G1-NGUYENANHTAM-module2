@@ -33,18 +33,26 @@ public class MyListTest {
             StuDent stuDent3 = new StuDent(4, "D");
             StuDent stuDent4 = new StuDent(5, "E");
 
+
             MyList<StuDent> stuDentMyList = new MyList<>();
+            MyList<StuDent> newstuDentMyList = new MyList<>();
+
             stuDentMyList.add(stuDent);
             stuDentMyList.add(stuDent1);
             stuDentMyList.add(stuDent2);
             stuDentMyList.add(stuDent3);
             stuDentMyList.add(stuDent4);
 
-
-            for(int i = 0; i< stuDentMyList.size();i++){
-                System.out.println(stuDentMyList.element[i]);
+            stuDentMyList.size();
+            newstuDentMyList = stuDentMyList.clone();
+            newstuDentMyList.remove(0);
+            for (int i = 0; i < newstuDentMyList.size(); i++) {
+                System.out.println(newstuDentMyList.get(i).getName());
             }
+
+
         }
     }
-
 }
+
+
