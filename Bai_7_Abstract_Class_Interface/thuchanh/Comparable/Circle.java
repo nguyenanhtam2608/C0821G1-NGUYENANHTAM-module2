@@ -1,4 +1,4 @@
-package Bai_7_Abstract_Class_Interface.thuchanh.Comparable;
+package bai_7_abstract_class_interface.thuchanh.Comparable;
 
 public class Circle extends Shape {
     private double radius = 1.0;

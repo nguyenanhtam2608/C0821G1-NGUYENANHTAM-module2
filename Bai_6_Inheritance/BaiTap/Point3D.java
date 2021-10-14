@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.BaiTap;
+package bai_6_inheritance.baitap;
 
 class Point3D extends Point2D {
     private float z = 0f;

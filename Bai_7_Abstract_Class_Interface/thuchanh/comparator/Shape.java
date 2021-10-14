@@ -1,4 +1,4 @@
-package Bai_7_Abstract_Class_Interface.thuchanh.comparator;
+package bai_7_abstract_class_interface.thuchanh.comparator;
 
 public class Shape {
 

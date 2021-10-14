@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.BaiTap;
+package bai_6_inheritance.baitap;
 
 class Cylinder extends Circle {
     private double height = 10;

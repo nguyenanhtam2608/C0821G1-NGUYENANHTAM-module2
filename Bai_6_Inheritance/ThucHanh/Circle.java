@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.ThucHanh;
+package bai_6_inheritance.thuchanh;
 
 class Circle extends Shape {// lớp hình tròn
     private double ridius = 1.0;

@@ -1,4 +1,4 @@
-package On_tap_OOP_CuoiTuan;
+package on_tap_oop_cuoituan;
 
 import java.util.Scanner;
 

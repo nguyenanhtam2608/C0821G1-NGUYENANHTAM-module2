@@ -1,6 +1,4 @@
-package Bai_7_Abstract_Class_Interface.baiTap.resizeable;
-
-import java.util.Arrays;
+package bai_7_abstract_class_interface.baiTap.resizeable;
 
 public class TestResizeable {
     public static void main(String[] args) {

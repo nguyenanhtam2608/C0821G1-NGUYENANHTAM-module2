@@ -1,4 +1,4 @@
-package Bai_7_Abstract_Class_Interface.baiTap.resizeable;
+package bai_7_abstract_class_interface.baiTap.resizeable;
 
 public class Shape {
 

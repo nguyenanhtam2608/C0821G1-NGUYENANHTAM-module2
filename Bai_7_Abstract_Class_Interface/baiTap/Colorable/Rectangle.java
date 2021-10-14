@@ -1,7 +1,7 @@
-package Bai_7_Abstract_Class_Interface.baiTap.Colorable;
+package bai_7_abstract_class_interface.baiTap.Colorable;
 
 
-import Bai_7_Abstract_Class_Interface.thuchanh.Comparable.Shape;
+import bai_7_abstract_class_interface.thuchanh.Comparable.Shape;
 
 public class Rectangle extends Shape {
     double width = 1.0;

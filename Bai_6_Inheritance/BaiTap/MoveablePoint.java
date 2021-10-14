@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.BaiTap;
+package bai_6_inheritance.baitap;
 
 class MoveablePoint extends Point {
     private float xSpeed = 0f;

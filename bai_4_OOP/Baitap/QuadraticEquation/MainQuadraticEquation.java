@@ -1,4 +1,4 @@
-package bai_4_OOP.Baitap.QuadraticEquation;
+package bai_4_oop.baitap.QuadraticEquation;
 
 import java.util.Scanner;
 

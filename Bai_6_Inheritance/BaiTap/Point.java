@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.BaiTap;
+package bai_6_inheritance.baitap;
 
 public class Point {
     private float x = 0f;

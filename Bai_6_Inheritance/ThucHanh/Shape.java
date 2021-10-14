@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.ThucHanh;
+package bai_6_inheritance.thuchanh;
 
 public class Shape {
     private String color = "green";

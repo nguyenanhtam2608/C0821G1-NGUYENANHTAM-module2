@@ -1,4 +1,4 @@
-package Bai_6_Inheritance.ThucHanh;
+package bai_6_inheritance.thuchanh;
 
 public class Square extends Rectangle {
     public Square() {

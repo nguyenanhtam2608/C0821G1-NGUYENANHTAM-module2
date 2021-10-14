@@ -1,4 +1,4 @@
-package bai_4_OOP.Baitap.QuadraticEquation;
+package bai_4_oop.baitap.QuadraticEquation;
 
 public class QuadraticEquation {// khai báo 1 lớp tên là QuadraticEquation
     double a, b, c;
@@ -27,7 +27,7 @@ public class QuadraticEquation {// khai báo 1 lớp tên là QuadraticEquation
             System.out.println("nghiệm 1: "+getRoot1());
             System.out.println("nghiệm 2: "+getRoot2());
         } else if (delta == 0) {
-            System.out.println(getRoot1());
+            System.out.println("Nghiệm là : "+getRoot1());
         } else {
             System.out.println("Vô nghiệm");
         }

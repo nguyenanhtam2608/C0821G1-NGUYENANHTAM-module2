@@ -1,4 +1,4 @@
-package bai_4_OOP.Thuchanh;
+package bai_4_oop.thuchanh;
 
 public class ClassRectangular {
     double witdh, height;

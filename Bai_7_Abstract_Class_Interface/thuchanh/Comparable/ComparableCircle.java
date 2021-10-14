@@ -1,4 +1,4 @@
-package Bai_7_Abstract_Class_Interface.thuchanh.Comparable;
+package bai_7_abstract_class_interface.thuchanh.Comparable;
 
 public class ComparableCircle extends Circle
         implements Comparable<ComparableCircle> {

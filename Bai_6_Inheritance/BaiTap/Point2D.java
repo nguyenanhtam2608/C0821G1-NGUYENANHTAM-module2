@@ -1,6 +1,4 @@
-package Bai_6_Inheritance.BaiTap;
-
-import java.util.Arrays;
+package bai_6_inheritance.baitap;
 
 public class Point2D {
     private float x = 3f;

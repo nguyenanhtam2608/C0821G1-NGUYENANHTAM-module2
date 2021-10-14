@@ -1,6 +1,4 @@
-package Bai_6_Inheritance.BaiTap;
-
-import java.util.Date;
+package bai_6_inheritance.baitap;
 
 public class Circle {
     private Double radius = 5.0;
