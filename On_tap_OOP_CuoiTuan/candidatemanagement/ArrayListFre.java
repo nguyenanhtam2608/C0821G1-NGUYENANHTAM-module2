@@ -26,5 +26,8 @@ public class ArrayListFre {
     }
     public void addFre(int idExp, String firsNameFre, String lastNameFre, String birthDateFre, String adderssFre, long phoneFre, String emailFre, int fresheCandidate, String draduationDate, int graduationRank, String schoolFre) {
     }
+    public void DisplayFre(){
+        System.out.println(fresherList);
+    }
 
 }

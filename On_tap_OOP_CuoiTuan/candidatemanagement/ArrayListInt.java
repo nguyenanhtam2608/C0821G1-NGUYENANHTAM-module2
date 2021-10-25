@@ -25,4 +25,10 @@ public class ArrayListInt {
     public void addInt(Intern intern) {
         internList.add(intern);
     }
+
+    public void addInt(int idInt, String firsNameInt, String lastNameInt, String birthDateInt, Long phoneInt, String emailInt,int internCandidate, String majors, int semester, String schoolInt) {
+    }
+    public void DisplayInt(){
+        System.out.println(internList);
+    }
 }

@@ -30,7 +30,7 @@ public class Fresher {
         this.schoolFre = schoolFre;
     }
 
-    public String getFirsNameFre() {
+    public  String getFirsNameFre() {
         return firsNameFre;
     }
 

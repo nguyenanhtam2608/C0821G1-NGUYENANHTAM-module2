@@ -3,6 +3,7 @@ package on_tap_oop_cuoituan.candidatemanagement;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -15,15 +16,17 @@ public class Main {
                 "4. Searching\n" +
                 "5. Exit");
         Scanner input = new Scanner(System.in);
-
+        Experience experiences = new Experience();
 
         ArrayList arrayList = new ArrayList();
-        arrayList.addExp(1, "Nguyễn", "Anh Tâm", "26/08/2002", "Quảng nam", 763709673, "nguyenanham@gmail.com", 0, 2, "code");
-        arrayList.addExp(1, "Trần", "Anh Tuấn", "26/08/2002", "Đà Nẵng", 763709673, "nguyenanham@gmail.com", 0, 2, "code");
+        arrayList.addExp(new Experience(1, "Nguyễn", "Anh Tâm", "26/08/2002", "Quảng nam", 763709673, "nguyenanham@gmail.com", 0, 2, "code"));
+        arrayList.addExp(new Experience(2, "Trần", "Anh Tuấn", "26/08/2002", "Đà Nẵng", 763709673, "nguyenanham@gmail.com", 0, 2, "code"));
+
         ArrayListFre arrayListFre = new ArrayListFre();
-        arrayListFre.addFre(1, "Lê", "Phương", "26/08/2002", "Quảng Ngãi", 763709673, "nguyenanham@gmail.com", 1, "26/12/2021", 1, "Duy Tân");
-        arrayListFre.addFre(1, "Mai", "Thanh", "26/08/2002", "Huế", 763709673, "nguyenanham@gmail.com", 1, "26/12/2021", 1, "Duy Tân");
+        arrayListFre.addFre(new Fresher(1, "Lê", "Phương", "26/08/2002", "Quảng Ngãi", 763709673, "nguyenanham@gmail.com", 1, "26/12/2021", 1, "Duy Tân"));
+        arrayListFre.addFre(new Fresher(1, "Mai", "Thanh", "26/08/2002", "Huế", 763709673, "nguyenanham@gmail.com", 1, "26/12/2021", 1, "Duy Tân"));
         ArrayListInt arrayListInt = new ArrayListInt();
+        arrayListInt.addInt(new Intern(1, "hồ", "Vi", "02/01/2002", 763709673L, "hothaovu@gmail.com", 2, "It", 2, "CodeGym"));
 
         int option;
 
@@ -281,15 +284,127 @@ public class Main {
                             for (Intern intern : arrayListInt.getInternList()) {
                                 System.out.println(intern);
                             }
+
                             break;
                         }
                     } while (select == "y" || select == "Y");
                     break;
                 }
+
                 case 4: {
-                  //Em chưa làm được ạ
+                    String fistName = null;
+                    String lastName = null;
+                    int candidate = 0;
+
+                    System.out.println("Danh sách ứng viên");
+                    System.out.println("Experiecce");
+                    for (Experience experience1 : arrayList.getExperienceList()) {
+                        System.out.println(experience1);
+                    }
+                    System.out.println("Fresher");
+                    for (Fresher fresher : arrayListFre.getFresherList()) {
+                        System.out.println(fresher);
+                    }
+                    System.out.println("Intern");
+                    for (Intern intern : arrayListInt.getInternList()) {
+                        System.out.println(intern);
+                    }
+                    int select;
+                    do {
+
+                        System.out.println(
+                                " Nhập 1 để nhập Frist " + "\n" +
+                                        " Nhập 2 để nhập Last");
+                        select = Integer.parseInt(input.nextLine());
+                        if (select == 1) {
+                            System.out.println("Nhập fristName");
+                            fistName = input.nextLine();
+                            do {
+                                System.out.println("Nhập candidate");
+                                candidate = Integer.parseInt(input.nextLine());
+
+                                if (candidate == 0) {
+                                    for (Experience experience : arrayList.getExperienceList()) {
+                                        if (fistName.equals(experience.getFirsNameExp())) {
+                                            System.out.println(experience);
+                                            break;
+                                        } else {
+                                            System.out.println("Không tìm thấy");
+                                        }
+                                    }
+                                    break;
+                                }
+                                if (candidate == 1) {
+                                    for (Fresher fresher : arrayListFre.getFresherList()) {
+                                        if (fistName.equals(fresher.getFirsNameFre())) {
+                                            System.out.println(fresher);
+                                            break;
+                                        } else {
+                                            System.out.println("Không tìm thấy");
+                                        }
+                                    }
+                                    break;
+                                }
+                                if (candidate == 2) {
+                                    for (Intern intern : arrayListInt.getInternList()) {
+                                        if (fistName.equals(intern.getFirsNameInt())) {
+                                            System.out.println(intern);
+                                            break;
+                                        } else {
+                                            System.out.println("Không tìm thấy");
+                                        }
+                                    }
+
+                                }
+                            } while (candidate < 0 || candidate > 2);
+                            break;
+                        }
+
+                        if (select == 2) {
+                            System.out.println("Nhập LastName");
+                            lastName = input.nextLine();
+                            do {
+                                System.out.println("Nhập candidate");
+                                candidate = Integer.parseInt(input.nextLine());
+                                if (candidate == 0) {
+                                    for (Experience experience : arrayList.getExperienceList()) {
+                                        if (lastName.equals(experience.getLastNameExp())) {
+                                            System.out.println(experience);
+                                        } else {
+                                            System.out.println("Không tìm thấy");
+                                        }
+                                    }
+                                    break;
+                                }
+                                if (candidate == 1) {
+                                    for (Fresher fresher : arrayListFre.getFresherList()) {
+                                        if (lastName.equals(fresher.getLastNameFre())) {
+                                            System.out.println(fresher);
+                                            break;
+                                        } else {
+                                            System.out.println("Không tìm thấy");
+                                        }
+                                    }
+                                    break;
+                                }
+                                if (candidate == 2) {
+                                    for (Intern intern : arrayListInt.getInternList()) {
+                                        if (lastName.equals(intern.getLastNameInt())) {
+                                            System.out.println(intern);
+                                            break;
+                                        } else {
+                                            System.out.println("Không tìm thấy");
+                                        }
+                                    }
+                                }
+
+                            } while (candidate < 0 || candidate > 2);
+                        }
+
+                    } while (select != 1 && select != 2);
+                    break;
                 }
-                case 5:{
+                case 5: {
                     System.out.println("Bạn đã thoát ");
                     return;
                 }

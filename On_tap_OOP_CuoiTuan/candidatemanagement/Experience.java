@@ -1,5 +1,7 @@
 package on_tap_oop_cuoituan.candidatemanagement;
 
+import java.util.Objects;
+
 public class Experience {
     private int idExp;
     private String firsNameExp;
@@ -37,6 +39,7 @@ public class Experience {
         this.expInYear = expInYear;
         this.proSkill = proSkill;
     }
+
 
 
     public int getIdExp() {
@@ -135,5 +138,14 @@ public class Experience {
                 ", proSkill='" + proSkill + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Experience that = (Experience) o;
+        return idExp == that.idExp && phoneExp == that.phoneExp && experience == that.experience && expInYear == that.expInYear && Objects.equals(firsNameExp, that.firsNameExp) && Objects.equals(lastNameExp, that.lastNameExp) && Objects.equals(birthDateExp, that.birthDateExp) && Objects.equals(adderssExp, that.adderssExp) && Objects.equals(emailExp, that.emailExp) && Objects.equals(proSkill, that.proSkill);
+    }
+
 
 }
