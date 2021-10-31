@@ -1,14 +1,26 @@
-package on_tap_oop_cuoituan.candidatemanagement;
+package on_tap_oop_cuoituan.candidatemanagement.controller;
 
 
+import on_tap_oop_cuoituan.candidatemanagement.service.ArrayList;
+import on_tap_oop_cuoituan.candidatemanagement.service.ArrayListFre;
+import on_tap_oop_cuoituan.candidatemanagement.service.ArrayListInt;
+import on_tap_oop_cuoituan.candidatemanagement.model.Experience;
+import on_tap_oop_cuoituan.candidatemanagement.model.Fresher;
+import on_tap_oop_cuoituan.candidatemanagement.model.Intern;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Main {
-    public static void main(String[] args) {
+    public static final String FILE = "D:\\Inteillj_idea\\Module__2\\src\\on_tap_oop_cuoituan\\candidatemanagement\\controller\\array.csv";
+    public static final String FILEFRE = "D:\\Inteillj_idea\\Module__2\\src\\on_tap_oop_cuoituan\\candidatemanagement\\controller\\arrayfre.csv";
+    public static final String FILEINT = "D:\\Inteillj_idea\\Module__2\\src\\on_tap_oop_cuoituan\\candidatemanagement\\controller\\arrayint.csv";
+
+    public static void main(String[] args) throws IOException {
         System.out.println("----------HỆ THỐNG QUẢN LÝ THÍ SINH--------");
         System.out.println("1. Experience\n" +
                 "2. Fresher\n" +
@@ -21,7 +33,6 @@ public class Main {
         ArrayList arrayList = new ArrayList();
         arrayList.addExp(new Experience(1, "Nguyễn", "Anh Tâm", "26/08/2002", "Quảng nam", 763709673, "nguyenanham@gmail.com", 0, 2, "code"));
         arrayList.addExp(new Experience(2, "Trần", "Anh Tuấn", "26/08/2002", "Đà Nẵng", 763709673, "nguyenanham@gmail.com", 0, 2, "code"));
-
         ArrayListFre arrayListFre = new ArrayListFre();
         arrayListFre.addFre(new Fresher(1, "Lê", "Phương", "26/08/2002", "Quảng Ngãi", 763709673, "nguyenanham@gmail.com", 1, "26/12/2021", 1, "Duy Tân"));
         arrayListFre.addFre(new Fresher(1, "Mai", "Thanh", "26/08/2002", "Huế", 763709673, "nguyenanham@gmail.com", 1, "26/12/2021", 1, "Duy Tân"));
@@ -91,7 +102,10 @@ public class Main {
                         arrayList.addExp(new Experience(idExp, firsNameExp, lastNameExp, birthDateExp, adderssExp, phoneExp, emailExp, experience, expInYear, proSkill));
                         for (Experience experience1 : arrayList.getExperienceList()) {
                             System.out.println(experience1);
+                            arrayList.writeFile(new FileWriter(FILE), experience1);
                         }
+
+
                         System.out.println("Bạn có muốn tiếp tục tạo thêm không,Nhấp Y để tiếp tục,Nhấn 1 kí tự bất kì để thoát ");
                         select = input.nextLine();
                         if (select != "y" || select != "Y") {
@@ -104,6 +118,7 @@ public class Main {
 
                             for (Experience experience1 : arrayList.getExperienceList()) {
                                 System.out.println(experience1);
+                                arrayList.writeFile(new FileWriter(FILE), experience1);
                             }
                             break;
                         }
@@ -194,6 +209,8 @@ public class Main {
                         arrayListFre.addFre(new Fresher(idFre, firsNameFre, lastNameFre, birthDateFre, adderssFre, phoneFre, emailFre, fresheCandidate, draduationDate, graduationRank, schoolFre));
                         for (Fresher fresher : arrayListFre.getFresherList()) {
                             System.out.println(fresher);
+                            arrayListFre.writeFile(new FileWriter(FILEFRE), fresher);
+
                         }
                         System.out.println("Bạn có muốn tiếp tục tạo thêm không,Nhấp Y để tiếp tục,Nhấn 1 kí tự bất kì để thoát ");
                         select = input.nextLine();
@@ -271,6 +288,7 @@ public class Main {
                         arrayListInt.addInt(new Intern(idInt, firsNameInt, lastNameInt, birthDateInt, phoneInt, emailInt, internCandidate, majors, semester, schoolInt));
                         for (Intern intern : arrayListInt.getInternList()) {
                             System.out.println(intern);
+                            arrayListInt.writeFile(new FileWriter(FILEINT),intern);
                         }
                         System.out.println("Bạn có muốn tiếp tục tạo thêm không,Nhấp Y để tiếp tục,Nhấn 1 kí tự bất kì để thoát ");
                         select = input.nextLine();

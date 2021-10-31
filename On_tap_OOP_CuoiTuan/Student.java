@@ -1,6 +1,8 @@
 package on_tap_oop_cuoituan;
 
-public class Student {
+import java.util.Comparator;
+
+public class Student  {
     private int idStudent;
     private String nameStudent;
     private String address;
@@ -8,7 +10,6 @@ public class Student {
 
     public Student() {
     }
-
 
 
     public Student(int idStudent, String nameStudent, String address, double point) {
@@ -59,5 +60,4 @@ public class Student {
                 ", point=" + point +
                 '}' + "\n";
     }
-
 }

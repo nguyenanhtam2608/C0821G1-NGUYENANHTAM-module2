@@ -1,4 +1,4 @@
-package on_tap_oop_cuoituan.candidatemanagement;
+package on_tap_oop_cuoituan.candidatemanagement.model;
 
 import java.util.Date;
 
