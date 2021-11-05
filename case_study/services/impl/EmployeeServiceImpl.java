@@ -31,8 +31,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     Scanner input = new Scanner(System.in);
 
-    Employee employee = new Employee(1, "Nguyễn Anh Tâm", "26/08/2002", "Nam", 206406031, "0763709673", "nguyenanhtam@gmail.com", "đại học", "Giám đốc", 10);
-    Employee employee1 = new Employee(2, "Nguyễn Anh Tâm", "26/08/2002", "Nam", 206406031, "0763709673", "nguyenanhtam@gmail.com", "đại học", "Giám đốc", 10);
+    Employee employee = new Employee(1, "Nguyễn Anh Tâm", "26/08/2002", "Nam", "206406031", "0763709673", "nguyenanhtam@gmail.com", "đại học", "Giám đốc", 10);
+    Employee employee1 = new Employee(2, "Nguyễn Anh Tâm", "26/08/2002", "Nam", "206406031", "0763709673", "nguyenanhtam@gmail.com", "đại học", "Giám đốc", 10);
 
 
     @Override
@@ -55,8 +55,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         String birth = ValidateEmp.birthday();
         System.out.println("Nhập giới tính");
         String sex = input.nextLine();
-        System.out.println("Nhập CDMD");
-        int cmnd = Integer.parseInt(input.nextLine());
+        String cmnd = (String) ValidateEmp.cmnd();
         String phone = ValidateEmp.phone();
         String email = ValidateEmp.email();
         //Trình độ sẽ lưu trữ các thông tin: Trung cấp, Cao đẳng, Đại học và sau đại học
@@ -98,6 +97,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void returnMainMenu() {
+        System.out.println("1. Employee Management\n" +
+                "2. Customer Management\n" +
+                "3. Facility Management\n" +
+                "4. Booking Management\n" +
+                "5. Promotion Management\n" +
+                "6. Exit");
 
     }
 }

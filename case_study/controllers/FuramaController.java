@@ -1,9 +1,12 @@
 package case_study.controllers;
 
 
+import case_study.models.facility.Facility;
 import case_study.models.person.Employee;
 import case_study.services.impl.CustomerServiceImpl;
 import case_study.services.impl.EmployeeServiceImpl;
+import case_study.services.impl.FacilityServiceImpl;
+import org.hamcrest.Factory;
 
 import java.util.Scanner;
 
@@ -22,6 +25,7 @@ public class FuramaController {
         select = Integer.parseInt(input.nextLine());
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         CustomerServiceImpl customerService = new CustomerServiceImpl();
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
 
         switch (select) {
             case 1: {
@@ -46,14 +50,9 @@ public class FuramaController {
                         break;
                     }
                     case 4:{
-                        System.out.println("1. Employee Management\n" +
-                                "2. Customer Management\n" +
-                                "3. Facility Management\n" +
-                                "4. Booking Management\n" +
-                                "5. Promotion Management\n" +
-                                "6. Exit");
+                       employeeService.returnMainMenu();
+                       break;
                     }
-
                 }
                 break;
             }
@@ -80,12 +79,8 @@ public class FuramaController {
 
                     }
                     case 4:{
-                        System.out.println("1. Employee Management\n" +
-                                "2. Customer Management\n" +
-                                "3. Facility Management\n" +
-                                "4. Booking Management\n" +
-                                "5. Promotion Management\n" +
-                                "6. Exit");
+                        customerService.returnMainMenu();
+                        break;
                     }
 
                 }
@@ -96,6 +91,24 @@ public class FuramaController {
                         "2 Add new facility\n" +
                         "3 Display list facility maintenance\n" +
                         "4 Return main menu");
+                int option = Integer.parseInt(input.nextLine());
+                switch (option){
+                    case 1:{
+                        facilityService.disPlay();
+                        break;
+                    }
+                    case 2:{
+                        facilityService.add();
+                        break;
+                    }
+                    case 3:{
+                        facilityService.displayListFacilityMaintenance();
+                        break;
+                    }
+                    case 4:{
+                        facilityService.returnMainMenu();
+                    }
+                }
                 break;
             }
             case 4: {

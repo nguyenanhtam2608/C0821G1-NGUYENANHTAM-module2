@@ -4,6 +4,7 @@ import case_study.models.person.Customer;
 import case_study.models.person.Person;
 import case_study.services.CustomerService;
 import case_study.validate.ValidateCus;
+import case_study.validate.ValidateEmp;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -30,8 +31,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     Scanner input = new Scanner(System.in);
     //Loại Customer bao gồm: (Diamond, Platinium, Gold, Silver, Member).
-    Customer customer = new Customer(1,"Hồ thải vi","02/01/2002","nữ",123456789,"0989098765","thaovi21@gmail.com","Gold","QN");
-    Customer customerOne= new Customer(2,"Hồ thải vi","02/01/2002","nữ",123456789,"0989098765","thaovi21@gmail.com","Gold","QN");
+    Customer customer = new Customer(1,"Hồ thải vi","02/01/2002","nữ","123456789","0989098765","thaovi21@gmail.com","Gold","QN");
+    Customer customerOne= new Customer(2,"Hồ thải vi","02/01/2002","nữ","123456789","0989098765","thaovi21@gmail.com","Gold","QN");
     @Override
     public void disPlay() {
         personLinkedList.add(customer);
@@ -52,8 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
         String birth = ValidateCus.birthday();
         System.out.println("Nhập giới tính");
         String sex = input.nextLine();
-        System.out.println("Nhập CDMD");
-        int cmnd = Integer.parseInt(input.nextLine());
+        String cmnd = ValidateCus.cmnd();
         String phone = ValidateCus.phone();
         String email = ValidateCus.email();
         String type = ValidateCus.customerType();
@@ -93,6 +93,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void returnMainMenu() {
+        System.out.println("1. Employee Management\n" +
+                "2. Customer Management\n" +
+                "3. Facility Management\n" +
+                "4. Booking Management\n" +
+                "5. Promotion Management\n" +
+                "6. Exit");
 
     }
 }

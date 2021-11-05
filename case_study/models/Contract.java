@@ -20,12 +20,12 @@ public class Contract {
 
     @Override
     public String toString() {
-        return "Contract{" +
-                "numberContract=" + numberContract +
-                ", idBooking=" + idBooking +
-                ", advanceDepositAmount=" + advanceDepositAmount +
-                ", totalPaymentAmount=" + totalPaymentAmount +
-                ", idCustomer=" + idCustomer +
-                '}';
+        return
+                numberContract +
+                        "," + idBooking +
+                        "," + advanceDepositAmount +
+                        "," + totalPaymentAmount +
+                        "," + idCustomer;
+
     }
 }

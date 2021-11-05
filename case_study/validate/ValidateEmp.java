@@ -8,6 +8,7 @@ public class ValidateEmp {
     private static final String BIRTH_DAY = "^\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}$";
     private static final String PHONE = "^[0-9&&[0]]{1}\\d{9}$";
     private static final String EMAIL = "^[a-zA-Z][\\w-]+@([\\w]+\\.[\\w]+|[\\w]+\\.[\\w]{2,}\\.[\\w]{2,})$";
+    private static final String CMND = "^[0-9]{9}$";
     static Scanner input = new Scanner(System.in);
 
     public static String birthday() {
@@ -23,6 +24,20 @@ public class ValidateEmp {
             System.err.println("Định dạng sai");
         }
         return birth;
+    }
+    public static String cmnd(){
+        String cmnd = null;
+        try {
+            System.out.println("Nhập cmnd");
+            cmnd = input.nextLine();
+            while (!Pattern.matches(CMND,cmnd)){
+                System.out.println("Nhập cmnd");
+                cmnd = input.nextLine();
+            }
+        }catch (Exception e){
+            System.err.println("Lỗi format ");
+        }
+        return cmnd;
     }
 
     public static String phone() {

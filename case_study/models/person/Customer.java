@@ -1,9 +1,9 @@
 package case_study.models.person;
 
-public class Customer extends Person{
-        private String customerType;// loại khách hàng
+public class Customer extends Person {
+    private String customerType;// loại khách hàng
     //Loại Customer bao gồm: (Diamond, Platinium, Gold, Silver, Member).
-        private String address;// đại chỉ
+    private String address;// đại chỉ
 
     public Customer() {
     }
@@ -13,7 +13,7 @@ public class Customer extends Person{
         this.address = address;
     }
 
-    public Customer(int id, String name, String birthday, String sex, int cnmd, String phone, String email, String customerType, String address) {
+    public Customer(int id, String name, String birthday, String sex, String cnmd, String phone, String email, String customerType, String address) {
         super(id, name, birthday, sex, cnmd, phone, email);
         this.customerType = customerType;
         this.address = address;
@@ -38,8 +38,8 @@ public class Customer extends Person{
     @Override
     public String toString() {
         return super.toString() +
-                "customerType='" + customerType + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+                "," + customerType +
+                "," + address;
+
     }
 }

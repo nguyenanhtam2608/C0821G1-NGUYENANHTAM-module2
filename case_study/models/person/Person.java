@@ -1,23 +1,23 @@
 package case_study.models.person;
 
 public abstract class Person {
-    private int id ;
+    private int id;
     private String name;
     private String birthday;
     private String sex;
-    private int cnmd ;
+    private String cmnd;
     private String phone;
     private String email;
 
     public Person() {
     }
 
-    public Person(int id, String name, String birthday, String sex, int cnmd, String phone, String email) {
+    public Person(int id, String name, String birthday, String sex, String cmnd, String phone, String email) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
         this.sex = sex;
-        this.cnmd = cnmd;
+        this.cmnd = cmnd;
         this.phone = phone;
         this.email = email;
     }
@@ -54,12 +54,12 @@ public abstract class Person {
         this.sex = sex;
     }
 
-    public int getCnmd() {
-        return cnmd;
+    public String getCmnd() {
+        return cmnd;
     }
 
-    public void setCnmd(int cnmd) {
-        this.cnmd = cnmd;
+    public void setCmnd(String cmnd) {
+        this.cmnd = cmnd;
     }
 
     public String getPhone() {
@@ -81,13 +81,12 @@ public abstract class Person {
     @Override
     public String toString() {
         return
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", sex='" + sex + '\'' +
-                ", cnmd=" + cnmd +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\''
-                ;
+                id +
+                        "," + name +
+                        "," + birthday +
+                        "," + sex +
+                        "," + cmnd +
+                        "," + phone +
+                        "," + email;
     }
 }

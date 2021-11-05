@@ -2,7 +2,7 @@ package case_study.models.facility;
 
 public class Villa extends Facility{
         private String roomStandard; //  tiêu chuẩn phòng
-        private double poolArea ;// tiêu chuẩn hồ bơi
+        private double poolArea ;// diện tích  hồ bơi
         private int numberOfFloors;// số tầng
 
         public Villa() {
@@ -48,9 +48,8 @@ public class Villa extends Facility{
         @Override
         public String toString() {
                 return super.toString() +
-                        "roomStandard='" + roomStandard + '\'' +
-                        ", poolArea=" + poolArea +
-                        ", numberOfFloors=" + numberOfFloors +
-                        '}';
+                        "," + roomStandard + '\'' +
+                        "," + poolArea +
+                        "," + numberOfFloors ;
         }
 }
