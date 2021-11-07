@@ -3,9 +3,10 @@ package case_study.services.impl;
 import case_study.models.person.Customer;
 import case_study.models.person.Person;
 import case_study.services.CustomerService;
-import case_study.validate.ValidateCus;
-import case_study.validate.ValidateEmp;
+import case_study.validate_readwritefile.validate.ValidateCus;
+import case_study.validate_readwritefile.readwritefile.WriteReadFilePerson;
 
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -61,6 +62,12 @@ public class CustomerServiceImpl implements CustomerService {
         String address = input.nextLine();
         Customer  customer = new Customer(id,name,birth,sex,cmnd,phone,email,type,address);
         personLinkedList.add(customer);
+        try {
+            WriteReadFilePerson.writePreson(customer, WriteReadFilePerson.WRITECUS);
+            System.out.println("Ghi thành công");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }

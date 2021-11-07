@@ -1,6 +1,5 @@
-package case_study.validate;
+package case_study.validate_readwritefile.validate;
 
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 

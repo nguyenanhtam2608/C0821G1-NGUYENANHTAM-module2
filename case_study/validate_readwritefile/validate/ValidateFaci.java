@@ -1,4 +1,4 @@
-package case_study.validate;
+package case_study.validate_readwritefile.validate;
 
 import java.util.Scanner;
 
@@ -80,9 +80,9 @@ public class ValidateFaci {
     public static String serviceFree(){
         String serviceFree = null;
         do {
-            System.out.println("Nhập dịch vụ miễn phí (Dịch vụ free : chỗ để xe )");
+            System.out.println("Nhập dịch vụ miễn phí (Dịch vụ free : chổ để xe )");
             serviceFree = input.nextLine().toLowerCase();
-        }while (!serviceFree.equals("chổ đễ xe"));
+        }while (!serviceFree.equals("chổ để xe"));
         return serviceFree;
     }
 }

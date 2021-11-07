@@ -16,5 +16,6 @@ public interface BookingService extends Service{
     void displayListContracts();
 
     void createNewConstracts();
+    void editcontracts();
 
 }

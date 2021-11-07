@@ -4,8 +4,10 @@ import case_study.models.facility.House;
 import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
 import case_study.services.FacilityService;
-import case_study.validate.ValidateFaci;
+import case_study.validate_readwritefile.validate.ValidateFaci;
+import case_study.validate_readwritefile.readwritefile.WriteReadFileFacility;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -45,7 +47,7 @@ public class FacilityServiceImpl implements FacilityService {
             System.out.println(key + " : " + value);
         }
 
-
+WriteReadFileFacility writeReadFileFacility = new WriteReadFileFacility();
     }
     @Override
     public void add() {
@@ -71,6 +73,12 @@ public class FacilityServiceImpl implements FacilityService {
                     Integer value = mapFacility.get(key);
                     System.out.println(key + " : " + value);
                 }
+                try {
+                    WriteReadFileFacility.writeReadFacility(villa, WriteReadFileFacility.WRITEVILLA);
+                    System.out.println("Ghi thành công");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
             case 2: {
@@ -87,6 +95,12 @@ public class FacilityServiceImpl implements FacilityService {
                    Integer value = mapFacility.get(key);
                     System.out.println(key + ":" + value);
                 }
+                try {
+                    WriteReadFileFacility.writeReadFacility(house, WriteReadFileFacility.WRITEHOUSE);
+                    System.out.println("Ghi thành Công");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
             case 3: {
@@ -102,11 +116,19 @@ public class FacilityServiceImpl implements FacilityService {
                     Integer value = mapFacility.get(key);
                     System.out.println(key + ":" + value);
                 }
+                try {
+                    WriteReadFileFacility.writeReadFacility(room, WriteReadFileFacility.WRITEROOM);
+                    System.out.println("ghi thành công");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
                 break;
             }
             case 4: {
                 returnMainMenu();
+                break;
+
             }
         }
 
@@ -114,6 +136,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void edit() {
+
 
     }
 

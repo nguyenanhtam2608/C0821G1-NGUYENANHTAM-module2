@@ -3,8 +3,6 @@ package case_study.models.facility;
 public class Room extends Facility {
     private String freeServiceIncluded;// dịch vụ miễn phí đi kèm
 
-    public Room() {
-    }
 
     public Room(String freeServiceIncluded) {
         this.freeServiceIncluded = freeServiceIncluded;

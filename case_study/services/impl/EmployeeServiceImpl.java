@@ -3,8 +3,10 @@ package case_study.services.impl;
 import case_study.models.person.Employee;
 import case_study.models.person.Person;
 import case_study.services.EmployeeService;
-import case_study.validate.ValidateEmp;
+import case_study.validate_readwritefile.validate.ValidateEmp;
+import case_study.validate_readwritefile.readwritefile.WriteReadFilePerson;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -65,7 +67,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         double wage = ValidateEmp.wage();
         Employee employee = new Employee(id, name, birth, sex, cmnd, phone, email, level, location, wage);
         personList.add(employee);
-
+        try {
+            WriteReadFilePerson.writePreson(employee, WriteReadFilePerson.WRITEEMP);
+            System.out.println("Ghi thành công");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }

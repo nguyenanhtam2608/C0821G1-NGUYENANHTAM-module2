@@ -5,8 +5,7 @@ public class Villa extends Facility{
         private double poolArea ;// diện tích  hồ bơi
         private int numberOfFloors;// số tầng
 
-        public Villa() {
-        }
+
 
         public Villa(String roomStandard, double poolArea, int numberOfFloors) {
                 this.roomStandard = roomStandard;
@@ -48,7 +47,7 @@ public class Villa extends Facility{
         @Override
         public String toString() {
                 return super.toString() +
-                        "," + roomStandard + '\'' +
+                        "," + roomStandard +
                         "," + poolArea +
                         "," + numberOfFloors ;
         }
