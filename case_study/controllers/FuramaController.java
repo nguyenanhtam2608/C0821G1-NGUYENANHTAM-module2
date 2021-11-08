@@ -4,6 +4,7 @@ package case_study.controllers;
 import case_study.models.facility.Facility;
 import case_study.models.person.Employee;
 import case_study.services.ContactService;
+import case_study.services.PromotionService;
 import case_study.services.impl.*;
 import org.hamcrest.Factory;
 
@@ -25,6 +26,7 @@ public class FuramaController {
             FacilityServiceImpl facilityService = new FacilityServiceImpl();
             BookingServiceImpl bookingService = new BookingServiceImpl();
             ContactServiceImpl contactService = new ContactServiceImpl();
+            PromotionServiceImpl promotionService = new PromotionServiceImpl();
 
 
             int select;
@@ -37,7 +39,6 @@ public class FuramaController {
                         int option = 0;
 
                         do {
-
                             try {
                                 System.out.println("1 Display list employees\n" +
                                         "2 Add new employee\n" +
@@ -47,8 +48,8 @@ public class FuramaController {
 
                                 switch (option) {
                                     case 1: {
-                                        employeeService.disPlay();
-                                        break;
+                                            employeeService.disPlay();
+                                            break;
                                     }
                                     case 2: {
 
@@ -167,8 +168,8 @@ public class FuramaController {
                                     break;
                                 }
                                 case 6: {
-                                      bookingService.returnMainMenu();
-                                      break;
+                                    bookingService.returnMainMenu();
+                                    break;
                                 }
                             }
 
@@ -186,12 +187,15 @@ public class FuramaController {
                             option = Integer.parseInt(input.nextLine());
                             switch (option) {
                                 case 1: {
-
+                                    promotionService.displayListCustomersUseService();
+                                    break;
                                 }
                                 case 2: {
 
                                 }
                                 case 3: {
+                                    promotionService.returnMainMenu();
+                                    break;
 
                                 }
 

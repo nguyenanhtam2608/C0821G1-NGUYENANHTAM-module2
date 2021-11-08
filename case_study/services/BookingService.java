@@ -7,15 +7,10 @@ public interface BookingService extends Service{
     @Override
     void add();
 
-    @Override
-    void edit();
+
 
     @Override
     void returnMainMenu();
 
-    void displayListContracts();
-
-    void createNewConstracts();
-    void editcontracts();
 
 }

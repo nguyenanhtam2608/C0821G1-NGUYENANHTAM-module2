@@ -43,7 +43,6 @@ public class BookingServiceImpl  implements BookingService {
         }
 
 
-
     }
 
     @Override
@@ -79,23 +78,7 @@ public class BookingServiceImpl  implements BookingService {
                 "6. Exit");
     }
 
-    @Override
-    public void displayListContracts() {
 
-
-    }
-
-    @Override
-    public void createNewConstracts() {
-
-
-
-    }
-
-    @Override
-    public void editcontracts() {
-
-    }
 
 
 }

@@ -47,7 +47,7 @@ public class FacilityServiceImpl implements FacilityService {
             System.out.println(key + " : " + value);
         }
 
-WriteReadFileFacility writeReadFileFacility = new WriteReadFileFacility();
+
     }
     @Override
     public void add() {
@@ -152,7 +152,8 @@ WriteReadFileFacility writeReadFileFacility = new WriteReadFileFacility();
 
     @Override
     public void displayListFacilityMaintenance() {
-        System.out.println("Chưa bao trì");
+BookingServiceImpl bookingService = new BookingServiceImpl();
+
 
 
 

@@ -4,9 +4,8 @@ import case_study.models.Contract;
 import case_study.validate_readwritefile.readwritefile.WriteReadFileContract;
 import case_study.validate_readwritefile.validate.ValidateContract;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ContactServiceImpl {
     public static Queue<Contract> contractQueue;
@@ -17,6 +16,7 @@ public class ContactServiceImpl {
 
     public ContactServiceImpl() {
         contractQueue = new LinkedList<>();
+        contractQueue.addAll(WriteReadFileContract.readContract(WriteReadFileContract.CONTRACT));
     }
 
     public ContactServiceImpl(Queue<Contract> contractQueue) {
@@ -30,13 +30,8 @@ public class ContactServiceImpl {
     static Scanner input = new Scanner(System.in);
 
     public static void display() {
-        Contract contract = new Contract(1, 1, 100, 1000, 123);
-        Contract contract1 = new Contract(2, 2, 1000, 10000, 1234566);
-        contractQueue.add(contract);
-        contractQueue.add(contract1);
-
-        for (Contract contract2 : contractQueue) {
-            System.out.println(contract2);
+        for (Contract contract1 : contractQueue) {
+            System.out.println(contract1);
         }
     }
 
@@ -48,31 +43,38 @@ public class ContactServiceImpl {
         int idCus = ValidateContract.idCustomer();
         Contract contract = new Contract(idCon, idBook, advance, total, idCus);
         contractQueue.add(contract);
-        for (Contract contract1 : contractQueue) {
-            System.out.println(contract1);
-        }
         WriteReadFileContract.writeFileContract(contract, WriteReadFileContract.CONTRACT);
+        display();
     }
 
     public static void editContract() {
         display();
-        boolean check = false;
-        WriteReadFileContract.readContract(WriteReadFileContract.CONTRACT);
+        boolean check = true;
         System.out.println("Nhập id Contract bạn muốn sửa");
         int id = Integer.parseInt(input.nextLine());
 
-        while (( contractQueue.peek()) != null) {
-            if (id == contractQueue.peek().getIdBooking()) {
+        // chuyển đổi queue về list;
+        List<Contract> contract1 = contractQueue.stream().collect(Collectors.toCollection(ArrayList::new));
+        for (int i = 0; i < contract1.size(); i++) {
+            if (id == contract1.get(i).getNumberContract()) {
+                contract1.remove(i);
                 check = true;
-            }
-            if(check){
-                contractQueue.poll();
-
                 break;
             }else {
-                addContract();
-                break;
+                check =false;
             }
+        }
+        if(check) {
+            System.out.println("Bạn đã xóa thành công ");
+
+            //Cách chuyển đổi danh sách thành hàng đợi để đạt được FIFO
+            contractQueue = new LinkedList<>(contract1);
+            for (Contract contract : contractQueue) {
+                System.out.println(contract);
+            }
+            addContract();
+        }else {
+            System.out.println("Không có trong file");
         }
     }
 

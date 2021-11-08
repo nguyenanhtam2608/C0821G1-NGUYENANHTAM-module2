@@ -37,14 +37,10 @@ public class WriteReadFileContract {
                 contractList.add(contract);
             }
             bufferedReader.close();
-            System.out.println("đọc thành công");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        for (Contract contract : contractList) {
-            System.out.println(contract);
         }
         return contractList;
     }

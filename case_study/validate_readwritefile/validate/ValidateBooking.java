@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class ValidateBooking {
-    private static final String DAY = "\\b(0?[1-9]|[12]\\d|3[01])[\\/\\-.](0?[1-9]|[12]\\d|3[01])[\\/\\-.](\\d{2}|200[5-9]|202[0-1])\\b";
+    private static final String DAY = "\\b(0?[1-9]|[12]\\d|3[01])[\\/\\-.](0?[1-9]|[12]\\d|3[01])[\\/\\-.](\\d{2}|201[8-9]|202[0-1])\\b";
     static Scanner input = new Scanner(System.in);
 
     public static int idBooking() {
@@ -21,7 +21,7 @@ public class ValidateBooking {
         System.out.println("Nhập ngày  bắt đầu");
         startDay = input.nextLine();
         while (!Pattern.matches(DAY, startDay)) {
-            System.out.println("Nhập ngày  bắt đầu");
+            System.out.println("Nhập ngày tháng năm bắt đầu");
             startDay = input.nextLine();
         }
         return startDay;
